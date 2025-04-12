@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithm Visualizer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <i class="fas fa-project-diagram"></i>
+          <span>AlgoVisual</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#pathfinding">Pathfinding</a></li>
+          <li><a href="#sorting">Sorting</a></li>
+          <li><a href="#nqueens">N-Queens</a></li>
+          <li><a href="#binarysearch">Binary Search</a></li>
+        </ul>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Visualize Algorithms Like Never Before</h1>
+          <p>Interactive visualizations for pathfinding, sorting, and n-queens algorithms to help you understand how they work.</p>
+          <div class="hero-buttons">
+            <a href="#pathfinding" class="btn btn-primary">Get Started</a>
+            <a href="#features" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: How It Works Section -->
+<section class="how-it-works">
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">
+          <i class="fas fa-mouse-pointer"></i>
+        </div>
+        <h3>1. Choose an Algorithm</h3>
+        <p>Select from pathfinding, sorting, or n-queens algorithms to visualize.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">
+          <i class="fas fa-sliders-h"></i>
+        </div>
+        <h3>2. Adjust Settings</h3>
+        <p>Customize speed, input size, or parameters to see how the algorithm behaves.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">
+          <i class="fas fa-play-circle"></i>
+        </div>
+        <h3>3. Step Through or Play</h3>
+        <p>Pause, rewind, or fast-forward to understand each step in detail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2>What You Can Visualize</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-route"></i>
+            </div>
+            <h3>Pathfinding</h3>
+            <p>Dijkstra's, A*, BFS, DFS algorithms with interactive grids and obstacles.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-sort-amount-down"></i>
+            </div>
+            <h3>Sorting</h3>
+            <p>Bubble, Selection, Insertion, Quick sorts with array visualization.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-infinity"></i>
+            </div>
+            <h3>Other Algorithms</h3>
+            <p>N-Queens problem with call stack visualization, Binary Search.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pathfinding Section -->
+    <section id="pathfinding" class="algorithm-section">
+      <div class="container">
+        <h2>Pathfinding Algorithms</h2>
+        <div class="algorithm-container">
+          <div class="algorithm-controls">
+            <div class="control-panel">
+              <h3>Controls</h3>
+              <div class="control-group">
+                <label for="pf-algorithm">Algorithm:</label>
+                <select id="pf-algorithm">
+                  <option value="dijkstra">Dijkstra's</option>
+                  <option value="astar">A* Search</option>
+                  <option value="bfs">Breadth-First Search</option>
+                  <option value="dfs">Depth-First Search</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label for="pf-speed">Speed:</label>
+                <input type="range" id="pf-speed" min="1" max="10" value="5">
+              </div>
+              <div class="control-group">
+                <button id="pf-start" class="btn btn-primary">Start</button>
+                <button id="pf-reset" class="btn btn-outline">Reset</button>
+              </div>
+              <div class="control-group">
+                <label>Draw:</label>
+                <div class="draw-options">
+                  <button id="pf-wall" class="btn btn-small active">Wall</button>
+                  <button id="pf-start-node" class="btn btn-small">Start</button>
+                  <button id="pf-end-node" class="btn btn-small">End</button>
+                </div>
+              </div>
+            </div>
+            <div class="algorithm-info">
+              <div class="algorithm-details">
+                <h3>Algorithm Details</h3>
+                <p id="pf-description">Dijkstra's algorithm finds the shortest path between nodes in a graph.</p>
+                <div class="complexity">
+                  <h4>Time Complexity</h4>
+                  <div class="complexity-table">
+                    <div class="complexity-row">
+                      <span>Best Case</span>
+                      <span>Average Case</span>
+                      <span>Worst Case</span>
+                    </div>
+                    <div class="complexity-row">
+                      <span id="pf-best">O(E + V log V)</span>
+                      <span id="pf-avg">O(E + V log V)</span>
+                      <span id="pf-worst">O(E + V log V)</span>
+                    </div>
+                  </div>
+                  <h4>Space Complexity</h4>
+                  <p id="pf-space">O(V)</p>
+                </div>
+              </div>
+              <div class="algorithm-steps">
+                <h3>Algorithm Steps</h3>
+                <ol id="pf-steps">
+                  <li>Initialize distance values for all nodes (INF for all except start node = 0)</li>
+                  <li>Create a priority queue with all nodes</li>
+                  <li>While queue is not empty, extract node with minimum distance</li>
+                  <li>For each neighbor, update distances if shorter path found</li>
+                  <li>When end node is reached, reconstruct the path</li>
+                </ol>
+                <div class="progress-indicator">
+                  <span>Step <span id="pf-current-step">0</span> of <span id="pf-total-steps">5</span></span>
+                  <div class="progress-bar">
+                    <div id="pf-progress" class="progress" style="width: 0%"></div>
+                  </div>
+                  <span id="pf-percent">0% Complete</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="algorithm-visualization">
+            <div class="visualization-grid" id="pathfinding-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sorting Section -->
+    <section id="sorting" class="algorithm-section">
+      <div class="container">
+        <h2>Sorting Algorithms</h2>
+        <div class="algorithm-container">
+          <div class="algorithm-controls">
+            <div class="control-panel">
+              <h3>Controls</h3>
+              <div class="control-group">
+                <label for="sort-algorithm">Algorithm:</label>
+                <select id="sort-algorithm">
+                  <option value="bubble">Bubble Sort</option>
+                  <option value="selection">Selection Sort</option>
+                  <option value="insertion">Insertion Sort</option>
+                  <option value="quick">Quick Sort</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label for="array-size">Array Size:</label>
+                <input type="range" id="array-size" min="5" max="50" value="20">
+              </div>
+              <div class="control-group">
+                <label for="sort-speed">Speed:</label>
+                <input type="range" id="sort-speed" min="1" max="10" value="5">
+              </div>
+              <div class="control-group">
+                <button id="sort-start" class="btn btn-primary">Start</button>
+                <button id="sort-reset" class="btn btn-outline">Reset</button>
+                <button id="sort-shuffle" class="btn btn-small">Shuffle</button>
+              </div>
+            </div>
+            <div class="algorithm-info">
+              <div class="algorithm-details">
+                <h3>Algorithm Details</h3>
+                <p id="sort-description">Bubble sort repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.</p>
+                <div class="complexity">
+                  <h4>Time Complexity</h4>
+                  <div class="complexity-table">
+                    <div class="complexity-row">
+                      <span>Best Case</span>
+                      <span>Average Case</span>
+                      <span>Worst Case</span>
+                    </div>
+                    <div class="complexity-row">
+                      <span id="sort-best">O(n)</span>
+                      <span id="sort-avg">O(n²)</span>
+                      <span id="sort-worst">O(n²)</span>
+                    </div>
+                  </div>
+                  <h4>Space Complexity</h4>
+                  <p id="sort-space">O(1)</p>
+                </div>
+              </div>
+              <div class="algorithm-steps">
+                <h3>Algorithm Steps</h3>
+                <ol id="sort-steps">
+                  <li>Start with first element</li>
+                  <li>Compare with next element</li>
+                  <li>Swap if in wrong order</li>
+                  <li>Move to next element</li>
+                  <li>Repeat until no swaps needed</li>
+                </ol>
+                <div class="progress-indicator">
+                  <span>Step <span id="sort-current-step">0</span> of <span id="sort-total-steps">5</span></span>
+                  <div class="progress-bar">
+                    <div id="sort-progress" class="progress" style="width: 0%"></div>
+                  </div>
+                  <span id="sort-percent">0% Complete</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="algorithm-visualization">
+            <div class="visualization-bars" id="sorting-bars"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+     <!-- New N-Queens Section -->
+     <section id="nqueens" class="algorithm-section">
+      <div class="container">
+        <h2>N-Queens Problem</h2>
+        <div class="algorithm-container">
+          <div class="algorithm-controls">
+            <div class="control-panel">
+              <h3>Controls</h3>
+              <div class="control-group">
+                <label for="nqueens-size">Board Size:</label>
+                <input type="range" id="nqueens-size" min="4" max="12" value="8">
+              </div>
+              <div class="control-group">
+                <label for="nqueens-speed">Speed:</label>
+                <input type="range" id="nqueens-speed" min="1" max="10" value="5">
+              </div>
+              <div class="control-group">
+                <button id="nqueens-start" class="btn btn-primary">Start</button>
+                <button id="nqueens-reset" class="btn btn-outline">Reset</button>
+              </div>
+            </div>
+            <div class="algorithm-info">
+              <div class="algorithm-details">
+                <h3>Algorithm Details</h3>
+                <p>The N-Queens problem places N chess queens on an N×N chessboard so that no two queens threaten each other.</p>
+                <div class="complexity">
+                  <h4>Time Complexity</h4>
+                  <div class="complexity-table">
+                    <div class="complexity-row">
+                      <span>Best Case</span>
+                      <span>Average Case</span>
+                      <span>Worst Case</span>
+                    </div>
+                    <div class="complexity-row">
+                      <span>O(N!)</span>
+                      <span>O(N!)</span>
+                      <span>O(N!)</span>
+                    </div>
+                  </div>
+                  <h4>Space Complexity</h4>
+                  <p>O(N²)</p>
+                </div>
+              </div>
+              <div class="algorithm-steps">
+                <h3>Algorithm Steps</h3>
+                <ol id="nqueens-steps">
+                  <li>Place a queen in the first column</li>
+                  <li>Move to next column and place queen safely</li>
+                  <li>If no safe position, backtrack</li>
+                  <li>Repeat until all queens placed</li>
+                </ol>
+                <div class="progress-indicator">
+                  <span>Step <span id="nqueens-current-step">0</span> of <span id="nqueens-total-steps">4</span></span>
+                  <div class="progress-bar">
+                    <div id="nqueens-progress" class="progress" style="width: 0%"></div>
+                  </div>
+                  <span id="nqueens-percent">0% Complete</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="algorithm-visualization">
+            <div class="visualization-container" id="nqueens-visualization"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Binary Search Section -->
+    <section id="binarysearch" class="algorithm-section">
+      <div class="container">
+        <h2>Binary Search</h2>
+        <div class="algorithm-container">
+          <div class="algorithm-controls">
+            <div class="control-panel">
+              <h3>Controls</h3>
+              <div class="control-group">
+                <label for="binarysearch-size">Array Size:</label>
+                <input type="range" id="binarysearch-size" min="5" max="50" value="20">
+              </div>
+              <div class="control-group">
+                <label for="binarysearch-speed">Speed:</label>
+                <input type="range" id="binarysearch-speed" min="1" max="10" value="5">
+              </div>
+              <div class="control-group">
+                <button id="binarysearch-start" class="btn btn-primary">Start</button>
+                <button id="binarysearch-reset" class="btn btn-outline">Reset</button>
+              </div>
+            </div>
+            <div class="algorithm-info">
+              <div class="algorithm-details">
+                <h3>Algorithm Details</h3>
+                <p>Binary search efficiently locates a target value within a sorted array by repeatedly dividing the search interval in half.</p>
+                <div class="complexity">
+                  <h4>Time Complexity</h4>
+                  <div class="complexity-table">
+                    <div class="complexity-row">
+                      <span>Best Case</span>
+                      <span>Average Case</span>
+                      <span>Worst Case</span>
+                    </div>
+                    <div class="complexity-row">
+                      <span>O(1)</span>
+                      <span>O(log n)</span>
+                      <span>O(log n)</span>
+                    </div>
+                  </div>
+                  <h4>Space Complexity</h4>
+                  <p>O(1)</p>
+                </div>
+              </div>
+              <div class="algorithm-steps">
+                <h3>Algorithm Steps</h3>
+                <ol id="binarysearch-steps">
+                  <li>Compare target to middle element</li>
+                  <li>If equal, return index</li>
+                  <li>If less, search left half</li>
+                  <li>If greater, search right half</li>
+                  <li>Repeat until found or interval empty</li>
+                </ol>
+                <div class="progress-indicator">
+                  <span>Step <span id="binarysearch-current-step">0</span> of <span id="binarysearch-total-steps">5</span></span>
+                  <div class="progress-bar">
+                    <div id="binarysearch-progress" class="progress" style="width: 0%"></div>
+                  </div>
+                  <span id="binarysearch-percent">0% Complete</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="algorithm-visualization">
+            <div class="visualization-container" id="binarysearch-visualization"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>AlgoVisual</h3>
+          <p>Interactive algorithm visualizer to help you understand how algorithms work through visualization.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#pathfinding">Pathfinding</a></li>
+            <li><a href="#sorting">Sorting</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email: info@algovisual.com</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AlgoVisual. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/pathfinding.js"></script>
+  <script src="js/sorting.js"></script>
+  <script src="js/nqueens.js"></script>
+  <script src="js/binarysearch.js"></script>
+</body>
+</html>
