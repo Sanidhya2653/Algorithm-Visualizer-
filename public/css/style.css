@@ -717,3 +717,34 @@ footer {
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
+
+/*nqueen css updated*/
+.nqueens-cell.checking {
+  background-color: rgba(67, 97, 238, 0.3) !important;
+}
+
+.nqueens-cell.queen-placing {
+  animation: placeQueen 0.3s ease-out;
+  background-color: var(--success);
+}
+
+.nqueens-cell.queen-removing {
+  animation: removeQueen 0.3s ease-out;
+  background-color: var(--danger);
+}
+
+@keyframes placeQueen {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes removeQueen {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+.status-text {
+  margin-top: 10px;
+  font-family: monospace;
+  color: var(--gray);
+}
