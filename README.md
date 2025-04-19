@@ -4,10 +4,8 @@ AlgoVisual is an interactive web-based tool to visualize and understand how diff
 
 ---
 
-## 🌐 Live Demo
-
-> Currently running locally via Live Server  
-> To run: Open `public/index.html` in a browser or use Live Server in VS Code.
+### 🌐 Live Preview  
+Check out the live demo: [algorithm-visualizer-puce.vercel.app](https://algorithm-visualizer-puce.vercel.app)
 
 ---
 
@@ -89,8 +87,7 @@ cd algorithm-visualizer
 ## 🎯 Future Enhancements
 
 - 🧠 Add Data Structure Visualizations
-- 📱 Make it fully responsive for mobile  
-- 🌐 Deploy on GitHub Pages / Netlify  
+- 📱 Make it fully responsive for mobile   
 - 📊 Add performance metrics (step count)
 
 ---
