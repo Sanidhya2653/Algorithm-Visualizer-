@@ -194,10 +194,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update progress display
   function updateProgress() {
     const percent = Math.min(100, Math.floor((currentStep / totalSteps) * 100));
-    document.getElementById('nqueens-current-step').textContent = currentStep;
-    document.getElementById('nqueens-total-steps').textContent = totalSteps;
-    document.getElementById('nqueens-percent').textContent = `${percent}% Complete`;
-    document.getElementById('nqueens-progress').style.width = `${percent}%`;
+  
+    const currentStepEl = document.getElementById('nqueens-current-step');
+    const totalStepsEl = document.getElementById('nqueens-total-steps');
+    const percentEl = document.getElementById('nqueens-percent');
+    const progressBar = document.getElementById('nqueens-progress');
+  
+    if (currentStepEl) currentStepEl.textContent = currentStep;
+    if (totalStepsEl) totalStepsEl.textContent = totalSteps;
+    if (percentEl) percentEl.textContent = `${percent}% Complete`;
+    if (progressBar) progressBar.style.width = `${percent}%`;
   }
 
   // Update status text

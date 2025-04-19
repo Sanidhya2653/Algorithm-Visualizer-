@@ -21,8 +21,6 @@
           <li><a href="#pathfinding">Pathfinding</a></li>
           <li><a href="#sorting">Sorting</a></li>
           <li><a href="#nqueens">N-Queens</a></li>
-          <li><a href="#binarysearch">Binary Search</a></li>
-        </ul>
         <div class="hamburger">
           <i class="fas fa-bars"></i>
         </div>
@@ -93,14 +91,14 @@
               <i class="fas fa-sort-amount-down"></i>
             </div>
             <h3>Sorting</h3>
-            <p>Bubble, Selection, Insertion, Quick sorts with array visualization.</p>
+            <p>Bubble, Selection, Insertion sorts with array visualization.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-infinity"></i>
             </div>
             <h3>Other Algorithms</h3>
-            <p>N-Queens problem with call stack visualization, Binary Search.</p>
+            <p>N-Queens problem with call stack visualization.</p>
           </div>
         </div>
       </div>
@@ -171,13 +169,7 @@
                   <li>For each neighbor, update distances if shorter path found</li>
                   <li>When end node is reached, reconstruct the path</li>
                 </ol>
-                <div class="progress-indicator">
-                  <span>Step <span id="pf-current-step">0</span> of <span id="pf-total-steps">5</span></span>
-                  <div class="progress-bar">
-                    <div id="pf-progress" class="progress" style="width: 0%"></div>
-                  </div>
-                  <span id="pf-percent">0% Complete</span>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -202,7 +194,6 @@
                   <option value="bubble">Bubble Sort</option>
                   <option value="selection">Selection Sort</option>
                   <option value="insertion">Insertion Sort</option>
-                  <option value="quick">Quick Sort</option>
                 </select>
               </div>
               <div class="control-group">
@@ -250,13 +241,7 @@
                   <li>Move to next element</li>
                   <li>Repeat until no swaps needed</li>
                 </ol>
-                <div class="progress-indicator">
-                  <span>Step <span id="sort-current-step">0</span> of <span id="sort-total-steps">5</span></span>
-                  <div class="progress-bar">
-                    <div id="sort-progress" class="progress" style="width: 0%"></div>
-                  </div>
-                  <span id="sort-percent">0% Complete</span>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -323,87 +308,12 @@
                   <li>If no safe position, backtrack</li>
                   <li>Repeat until all queens placed</li>
                 </ol>
-                <div class="progress-indicator">
-                  <span>Step <span id="nqueens-current-step">0</span> of <span id="nqueens-total-steps">4</span></span>
-                  <div class="progress-bar">
-                    <div id="nqueens-progress" class="progress" style="width: 0%"></div>
-                  </div>
-                  <span id="nqueens-percent">0% Complete</span>
-                </div>
+                
               </div>
             </div>
           </div>
           <div class="algorithm-visualization">
             <div class="visualization-container" id="nqueens-visualization"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- New Binary Search Section -->
-    <section id="binarysearch" class="algorithm-section">
-      <div class="container">
-        <h2>Binary Search</h2>
-        <div class="algorithm-container">
-          <div class="algorithm-controls">
-            <div class="control-panel">
-              <h3>Controls</h3>
-              <div class="control-group">
-                <label for="binarysearch-size">Array Size:</label>
-                <input type="range" id="binarysearch-size" min="5" max="50" value="20">
-              </div>
-              <div class="control-group">
-                <label for="binarysearch-speed">Speed:</label>
-                <input type="range" id="binarysearch-speed" min="1" max="10" value="5">
-              </div>
-              <div class="control-group">
-                <button id="binarysearch-start" class="btn btn-primary">Start</button>
-                <button id="binarysearch-reset" class="btn btn-outline">Reset</button>
-              </div>
-            </div>
-            <div class="algorithm-info">
-              <div class="algorithm-details">
-                <h3>Algorithm Details</h3>
-                <p>Binary search efficiently locates a target value within a sorted array by repeatedly dividing the search interval in half.</p>
-                <div class="complexity">
-                  <h4>Time Complexity</h4>
-                  <div class="complexity-table">
-                    <div class="complexity-row">
-                      <span>Best Case</span>
-                      <span>Average Case</span>
-                      <span>Worst Case</span>
-                    </div>
-                    <div class="complexity-row">
-                      <span>O(1)</span>
-                      <span>O(log n)</span>
-                      <span>O(log n)</span>
-                    </div>
-                  </div>
-                  <h4>Space Complexity</h4>
-                  <p>O(1)</p>
-                </div>
-              </div>
-              <div class="algorithm-steps">
-                <h3>Algorithm Steps</h3>
-                <ol id="binarysearch-steps">
-                  <li>Compare target to middle element</li>
-                  <li>If equal, return index</li>
-                  <li>If less, search left half</li>
-                  <li>If greater, search right half</li>
-                  <li>Repeat until found or interval empty</li>
-                </ol>
-                <div class="progress-indicator">
-                  <span>Step <span id="binarysearch-current-step">0</span> of <span id="binarysearch-total-steps">5</span></span>
-                  <div class="progress-bar">
-                    <div id="binarysearch-progress" class="progress" style="width: 0%"></div>
-                  </div>
-                  <span id="binarysearch-percent">0% Complete</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="algorithm-visualization">
-            <div class="visualization-container" id="binarysearch-visualization"></div>
           </div>
         </div>
       </div>
@@ -446,6 +356,5 @@
   <script src="js/pathfinding.js"></script>
   <script src="js/sorting.js"></script>
   <script src="js/nqueens.js"></script>
-  <script src="js/binarysearch.js"></script>
 </body>
 </html>

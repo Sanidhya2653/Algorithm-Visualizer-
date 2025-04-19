@@ -538,10 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function updateProgress(step, totalSteps) {
-    const percent = Math.min(100, Math.floor((step / totalSteps) * 100));
-    document.getElementById('pf-current-step').textContent = step;
-    document.getElementById('pf-percent').textContent = `${percent}% Complete`;
-    document.getElementById('pf-progress').style.width = `${percent}%`;
+   
   }
   
   function updateOutput(message) {

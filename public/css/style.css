@@ -289,23 +289,8 @@ nav {
   margin-bottom: 8px;
 }
 
-.progress-indicator {
-  margin-top: 20px;
-}
 
-.progress-bar {
-  height: 8px;
-  background-color: var(--light-gray);
-  border-radius: 4px;
-  margin: 8px 0;
-}
 
-.progress {
-  height: 100%;
-  border-radius: 4px;
-  background-color: var(--primary);
-  transition: width 0.3s ease;
-}
 
 .algorithm-visualization {
   background-color: white;
@@ -403,11 +388,13 @@ nav {
 
 .nqueens-board {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  aspect-ratio: 1 / 1;
+  max-width: 90vmin;
+  width: 100%;
   gap: 1px;
-  width: 400px;
-  height: 400px;
+  background-color: var(--light-gray);
+  border: 2px solid var(--dark);
+  margin: 0 auto;
 }
 
 .nqueens-cell {
@@ -618,43 +605,6 @@ footer {
   font-size: 1.5rem;
 }
 
-/* Binary Search specific styles */
-.binarysearch-array {
-  display: flex;
-  gap: 2px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.binarysearch-element {
-  padding: 8px 12px;
-  background-color: var(--primary);
-  color: white;
-  border-radius: 4px;
-  margin: 2px;
-}
-
-.binarysearch-element.current {
-  background-color: var(--warning);
-}
-
-.binarysearch-element.found {
-  background-color: var(--success);
-}
-
-.binarysearch-element.checked {
-  background-color: var(--accent);
-  opacity: 0.7;
-}
-
-.binarysearch-info {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: var(--light-gray);
-  border-radius: 4px;
-  font-family: monospace;
-}
 
 
 /* How It Works Section */
@@ -747,4 +697,37 @@ footer {
   margin-top: 10px;
   font-family: monospace;
   color: var(--gray);
+}
+
+
+/* Control adjustments */
+.control-group input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+}
+
+.status-text {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+/* New styles for Quick Sort visualization */
+.bar.pivot-highlight {
+  background-color: #f72585;
+  box-shadow: 0 0 10px rgba(247, 37, 133, 0.7);
+}
+
+.bar.pivot {
+  background-color: #7209b7;
+}
+
+.bar.partition-range {
+  background-color: rgba(114, 9, 183, 0.2);
+  border: 1px solid #7209b7;
 }

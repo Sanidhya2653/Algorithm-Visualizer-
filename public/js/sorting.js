@@ -66,9 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
       case 'insertion':
         insertionSortAnimations();
         break;
-      case 'quick':
-        quickSortAnimations();
-        break;
+      
     }
     
     // Play animations
@@ -159,53 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Quick Sort animations
-  function quickSortAnimations() {
-    const arr = [...array];
-    quickSortHelper(arr, 0, arr.length - 1);
-    
-    // Mark all as sorted at the end
-    for (let i = 0; i < arr.length; i++) {
-      animations.push({type: 'sorted', index: i});
-    }
-  }
-  
-  function quickSortHelper(arr, low, high) {
-    if (low < high) {
-      const pi = partition(arr, low, high);
-      quickSortHelper(arr, low, pi - 1);
-      quickSortHelper(arr, pi + 1, high);
-    }
-  }
-  
-  function partition(arr, low, high) {
-    const pivot = arr[high];
-    let i = low - 1;
-    
-    for (let j = low; j < high; j++) {
-      // Compare
-      animations.push({type: 'compare', indices: [j, high]});
-      
-      if (arr[j] < pivot) {
-        i++;
-        if (i !== j) {
-          // Swap
-          animations.push({type: 'swap', indices: [i, j]});
-          [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-      }
-    }
-    
-    // Swap pivot
-    if (i + 1 !== high) {
-      animations.push({type: 'swap', indices: [i + 1, high]});
-      [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-    }
-    
-    // Mark pivot as sorted
-    animations.push({type: 'pivot', index: i + 1});
-    return i + 1;
-  }
   
   // Play animations
   async function playAnimations() {
@@ -310,19 +261,6 @@ document.addEventListener('DOMContentLoaded', function() {
           'Compare with previous elements',
           'Insert the element in the correct position',
           'Repeat for all elements'
-        ]
-      },
-      'quick': {
-        description: 'Quick sort is a divide and conquer algorithm that partitions the array around a pivot element.',
-        best: 'O(n log n)',
-        avg: 'O(n log n)',
-        worst: 'O(n²)',
-        space: 'O(log n)',
-        steps: [
-          'Select a pivot element',
-          'Partition the array around the pivot',
-          'Recursively sort the sub-arrays',
-          'Combine the results'
         ]
       }
     };
