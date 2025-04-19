@@ -4,8 +4,8 @@ AlgoVisual is an interactive web-based tool to visualize and understand how diff
 
 ---
 
-### 🌐 Live Preview  
-Check out the live demo: [algorithm-visualizer-puce.vercel.app](https://algorithm-visualizer-puce.vercel.app)
+### 🎥 Live Preview  
+> 🔗 **[Open Live Demo](https://algorithm-visualizer-puce.vercel.app)**  
 
 ---
 
