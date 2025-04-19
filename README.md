@@ -61,7 +61,7 @@ algovisual/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/algorithm-visualizer.git
+git clone https://github.com/your-username/Algorithm-Visualizer-.git
 cd algorithm-visualizer
 ```
 
