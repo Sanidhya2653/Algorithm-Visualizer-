@@ -63,7 +63,7 @@ algovisual/
 ```bash
 git clone https://github.com/your-username/Algorithm-Visualizer-.git
 cd algorithm-visualizer
-https://github.com/Sanidhya2653/Algorithm-Visualizer-.git
+
 ```
 
 ### 2. Run Locally
