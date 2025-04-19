@@ -91,7 +91,7 @@ cd algorithm-visualizer
 - 🧠 Add Data Structure Visualizations
 - 📱 Make it fully responsive for mobile  
 - 🌐 Deploy on GitHub Pages / Netlify  
-- 📊 Add performance metrics (time complexity, step count)
+- 📊 Add performance metrics (step count)
 
 ---
 
