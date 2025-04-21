@@ -31,7 +31,7 @@ algovisual/
 - 🧮 **Interactive Input** – Customize input size, algorithm type, and speed  
 - 🎨 **Dynamic Visuals** – Elements update and animate in real time to show swaps, comparisons, and traversal  
 - 🧩 **Extensible Design** – Easily add more algorithms and data structures  
-
+ 
 ---
 
 ## 📌 Algorithms Implemented
